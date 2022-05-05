@@ -1,0 +1,55 @@
+import os
+
+color_path='/home/flychen59/SPADE/datasets/iVH/Color_image'
+standard_path='/home/flychen59/SPADE/datasets/iVH/Standard_image'
+
+
+
+for filename in os.listdir(standard_path):
+    oldfilename=standard_path+'/'+filename
+    d=filename.split('_',-1)[1]
+    new_filename=d+'.png'
+    os.rename(oldfilename,standard_path+'/'+d+'.png')
+
+seq1=0
+for filename2 in os.listdir(standard_path):
+    oldfilename2 = standard_path + '/' + filename2
+    os.rename(oldfilename2, standard_path + '/' + '{:06d}'.format(seq1) + '.png')
+    seq1+=1
+
+# for filename in os.listdir(standard_path):
+#     oldfilename=standard_path+'/'+filename
+#     d=filename.split('_',-1)[1]
+#     new_filename=d+'.png'
+#     os.rename(oldfilename,standard_path+'/'+d+'.png')
+#
+# seq1=0
+# for filename2 in os.listdir(standard_path):
+#     oldfilename2 = standard_path + '/' + filename2
+#     os.rename(oldfilename2, standard_path + '/' + '{:06d}'.format(seq1) + '.png')
+#     seq1+=1
+# seq=0
+# for filename in os.listdir(standard_path):
+#
+#     oldfilename=standard_path+'/'+filename
+#     os.rename(oldfilename,standard_path+'/'+'{:06d}'.format(seq)+'.png')
+#     seq+=1
+
+# seq1=0
+# for filename in os.listdir(standard_path):
+#     oldfilename = standard_path + '/' + filename
+#     os.rename(oldfilename, standard_path + '/' + '{:06d}'.format(seq1) + '.png')
+#     seq1+=1
+
+
+    # oldfilename=standard_path+'/'+filename
+    # d=filename.split('_',-1)[1]
+    # new_filename=d+'.png'
+    # os.rename(oldfilename,standard_path+'/'+d+'.png')
+    #
+    # oldfilename=standard_path+'/'+filename
+    # os.rename(oldfilename,standard_path+'/'+'{:06d}'.format(seq)+'.png')
+    # print(filename)
+    # seq+=1
+    # print(len(os.listdir(standard_path)))
+
